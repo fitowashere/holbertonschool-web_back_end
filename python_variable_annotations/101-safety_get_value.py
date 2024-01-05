@@ -4,6 +4,7 @@
 
 from typing import Mapping, Any, TypeVar, Union
 
+
 # Define a type variable
 T = TypeVar('T')
 
