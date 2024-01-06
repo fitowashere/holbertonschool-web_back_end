@@ -11,12 +11,13 @@ def zoom_array(lst: Tuple, factor: Union[int, float] = 2) -> List:
     # Ensures factor is an integer if a float is given.
     if isinstance(factor, float):
         factor = int(factor)
-        
+
     zoomed_in: List = [
         item for item in lst
         for i in range(int(factor))
     ]
     return zoomed_in
+
 
 # Manually adjust the annotations to exactly match the desired output
 zoom_array.__annotations__ = {
