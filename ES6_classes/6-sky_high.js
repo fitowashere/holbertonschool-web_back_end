@@ -1,35 +1,22 @@
-import Currency from './3-currency';
+import Building from './5-building';
 
-export default class Pricing {
-  constructor(amount, currency) {
-    this._amount = amount;
-    this._currency = currency;
+class SkyHighBuilding extends Building {
+  constructor(sqft, floors) {
+    super(sqft);
+    this._floors = floors;
   }
 
-  get amount() {
-    return this._amount;
+  get sqft() {
+    return this._sqft;
   }
 
-  set amount(newAmount) {
-    this._amount = newAmount;
+  get floors() {
+    return this._floors;
   }
 
-  get currency() {
-    return this._currency;
-  }
-
-  set currency(newCurrency) {
-    if (!(newCurrency instanceof Currency)) {
-      throw TypeError('Currency must be an instance of the Currency class');
-    }
-    this._currency = newCurrency;
-  }
-
-  displayFullPrice() {
-    return `${this._amount} ${this._currency.name} (${this._currency.code})`;
-  }
-
-  static convertPrice(amount, conversionRate) {
-    return amount * conversionRate;
+  evacuationWarningMessage() {
+    return `Evacuate slowly the ${this.floors} floors`;
   }
 }
+
+export default SkyHighBuilding;
