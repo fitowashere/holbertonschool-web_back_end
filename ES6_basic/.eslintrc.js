@@ -1,4 +1,3 @@
-
 module.exports = {
     env: {
       browser: false,
@@ -26,6 +25,14 @@ module.exports = {
         'LabeledStatement',
         'WithStatement',
       ],
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "endOfLine": "auto",
+          "tabWidth": 4
+        }
+      ]
     },
     overrides:[
       {
